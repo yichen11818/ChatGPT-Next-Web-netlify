@@ -306,7 +306,7 @@ function CheckButton() {
   );
 }
 
-function SyncConfigModal(props: { onClose?: () => void; openAiUrl: string; setOpenAiUrl: (url: string) => void }) {
+function SyncConfigModal({ onClose, openAiUrl, setOpenAiUrl }) {
   const syncStore = useSyncStore();
 
   return (
@@ -478,7 +478,7 @@ function SyncConfigModal(props: { onClose?: () => void; openAiUrl: string; setOp
   );
 }
 
-function SyncItems() {
+function SyncItems({ openAiUrl, setOpenAiUrl }) {
   const syncStore = useSyncStore();
   const chatStore = useChatStore();
   const promptStore = usePromptStore();
@@ -565,9 +565,9 @@ function SyncItems() {
 
       {showSyncConfigModal && (
         <SyncConfigModal
-        onClose={() => setShowSyncConfigModal(false)}
-        openAiUrl={openAiUrl}
-        setOpenAiUrl={setOpenAiUrl}
+          onClose={() => setShowSyncConfigModal(false)}
+          openAiUrl={openAiUrl}
+          setOpenAiUrl={setOpenAiUrl}
       />
       )}
     </>
@@ -681,6 +681,7 @@ export function Settings() {
             {Locale.Settings.SubTitle}
           </div>
         </div>
+        
         <div className="window-actions">
           <div className="window-action-button"></div>
           <div className="window-action-button"></div>
@@ -718,7 +719,7 @@ export function Settings() {
               </div>
             </Popover>
           </ListItem>
-
+          <SyncItems openAiUrl={openAiUrl} setOpenAiUrl={setOpenAiUrl} />
           <ListItem
             title={Locale.Settings.Update.Version(currentVersion ?? "unknown")}
             subTitle={
