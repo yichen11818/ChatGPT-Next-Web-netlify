@@ -1,6 +1,7 @@
 import { useEffect, useRef, useMemo } from "react";
 
 import styles from "./home.module.scss";
+import { useState } from "react";
 
 import { IconButton } from "./button";
 import SettingsIcon from "../icons/settings.svg";
@@ -130,6 +131,7 @@ function useDragSideBar() {
 
 export function SideBar(props: { className?: string }) {
   const chatStore = useChatStore();
+  const [openAiUrl, setOpenAiUrl] = useState("https://free.oneai.buzz/"); 
 
   // drag side bar
   const { onDragStart, shouldNarrow } = useDragSideBar();
@@ -155,10 +157,10 @@ export function SideBar(props: { className?: string }) {
     >
       <div className={styles["sidebar-header"]} data-tauri-drag-region>
         <div className={styles["sidebar-title"]} data-tauri-drag-region>
-          NextChat
+          yumiChat
         </div>
         <div className={styles["sidebar-sub-title"]}>
-          Build your own AI assistant.
+          1.5元换1美刀余额 24h购买:https://afdian.net/a/yumi1
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
@@ -180,11 +182,16 @@ export function SideBar(props: { className?: string }) {
           shadow
         />
         <IconButton
-          icon={<PluginIcon />}
-          text={shouldNarrow ? undefined : Locale.Plugin.Name}
-          className={styles["sidebar-bar-button"]}
-          onClick={() => showToast(Locale.WIP)}
-          shadow
+        icon={<PluginIcon/>}
+        text={shouldNarrow ? undefined : (openAiUrl === "https://free.oneai.buzz/" ? "free" : "VIP")}
+        className={styles["sidebar-bar-button"]}
+        onClick={() => {
+          const newUrl = openAiUrl === "https://free.oneai.buzz/" ? "https://ai.zeroai.buzz" : "https://free.oneai.buzz/";
+          setOpenAiUrl(newUrl);
+          config.update(access => access.openaiUrl = newUrl); // 更新配置中的 OpenAI URL
+          showToast(`OpenAI URL switched to ${newUrl}`);
+        }}
+        shadow
         />
       </div>
 

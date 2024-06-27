@@ -306,7 +306,7 @@ function CheckButton() {
   );
 }
 
-function SyncConfigModal(props: { onClose?: () => void }) {
+function SyncConfigModal(props: { onClose?: () => void; openAiUrl: string; setOpenAiUrl: (url: string) => void }) {
   const syncStore = useSyncStore();
 
   return (
@@ -325,7 +325,18 @@ function SyncConfigModal(props: { onClose?: () => void }) {
           />,
         ]}
       >
+        
         <List>
+          <ListItem
+            title="OpenAI URL"
+            subTitle="Set your custom OpenAI URL"
+          >
+            <input
+              type="text"
+              value={openAiUrl}
+              onChange={(e) => setOpenAiUrl(e.currentTarget.value)}
+            />
+          </ListItem>
           <ListItem
             title={Locale.Settings.Sync.Config.SyncType.Title}
             subTitle={Locale.Settings.Sync.Config.SyncType.SubTitle}
@@ -553,13 +564,18 @@ function SyncItems() {
       </List>
 
       {showSyncConfigModal && (
-        <SyncConfigModal onClose={() => setShowSyncConfigModal(false)} />
+        <SyncConfigModal
+        onClose={() => setShowSyncConfigModal(false)}
+        openAiUrl={openAiUrl}
+        setOpenAiUrl={setOpenAiUrl}
+      />
       )}
     </>
   );
 }
 
 export function Settings() {
+  const [openAiUrl, setOpenAiUrl] = useState(OPENAI_BASE_URL);
   const navigate = useNavigate();
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const config = useAppConfig();
