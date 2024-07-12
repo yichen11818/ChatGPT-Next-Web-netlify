@@ -79,15 +79,15 @@ function useDragSideBar() {
   const handleClick = () => {
     if (isFirstUrl) {
       accessStore.update((access) =>
-      (access.useCustomConfig = 'https://free.oneai.buzz/'),);
+      (access.openaiUrl = 'https://free.oneai.buzz/'),);
       showToast(Locale.WIP);
     } else {
       accessStore.update((access) =>
-        (access.useCustomConfig = 'https://free.oneai.buzz/'),);
+        (access.openaiUrl = 'https://free.oneai.buzz/'),);
       showToast(Locale.VIP);
     }
     setIsFirstUrl(!isFirstUrl);
-    console.log('Current OPENAI_BASE_URL:', access.useCustomConfig);
+    console.log('Current OPENAI_BASE_URL:', access.openaiUrl);
   };
 
   return (
