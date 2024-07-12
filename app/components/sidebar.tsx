@@ -135,9 +135,11 @@ export function SideBar(props: { className?: string }) {
   );
 
   useHotKey();
-
+  
+  const [isFirstUrl, setIsFirstUrl] = useState(true);
+  
   const handleClick = () => {
-    const [isFirstUrl, setIsFirstUrl] = useState(true);
+    
     if (isFirstUrl) {
       accessStore.update((access) => {
         access.openaiUrl = 'https://free.oneai.buzz/';
