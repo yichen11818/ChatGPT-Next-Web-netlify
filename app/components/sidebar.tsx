@@ -15,7 +15,7 @@ import DragIcon from "../icons/drag.svg";
 
 import Locale from "../locales";
 
-import { useAppConfig, useChatStore } from "../store";
+import { useAppConfig, useChatStore,useAccessStore } from "../store";
 
 import {
   DEFAULT_SIDEBAR_WIDTH,
@@ -34,6 +34,7 @@ import { showConfirm, showToast } from "./ui-lib";
 const ChatList = dynamic(async () => (await import("./chat-list")).ChatList, {
   loading: () => null,
 });
+
 
 function useHotKey() {
   const chatStore = useChatStore();
@@ -71,19 +72,22 @@ function useDragSideBar() {
       }
     });
   };
+  const accessStore = useAccessStore();
   const YourComponent = () => {
     const [isFirstUrl, setIsFirstUrl] = useState(true);
 
   const handleClick = () => {
     if (isFirstUrl) {
-      config.proxyUrl = 'https://free.oneai.buzz/';
+      accessStore.update((access) =>
+      (access.useCustomConfig = 'https://free.oneai.buzz/'),);
       showToast(Locale.WIP);
     } else {
-      config.proxyUrl = 'https://ai.zeroai.buzz/';
+      accessStore.update((access) =>
+        (access.useCustomConfig = 'https://free.oneai.buzz/'),);
       showToast(Locale.VIP);
     }
     setIsFirstUrl(!isFirstUrl);
-    console.log('Current OPENAI_BASE_URL:', config.proxyUrl);
+    console.log('Current OPENAI_BASE_URL:', access.useCustomConfig);
   };
 
   return (
