@@ -1,5 +1,5 @@
-import { useEffect, useRef, useMemo } from "react";
-
+import { useEffect, useRef, useMemo ,useState} from "react";
+  
 import styles from "./home.module.scss";
 
 import { IconButton } from "./button";
@@ -83,8 +83,34 @@ function useDragSideBar() {
       showToast(Locale.VIP);
     }
     setIsFirstUrl(!isFirstUrl);
+    console.log('Current OPENAI_BASE_URL:', config.proxyUrl);
   };
 
+  return (
+    <div className={styles["sidebar-header-bar"]}>
+      <IconButton
+        icon={<MaskIcon />}
+        text={shouldNarrow ? undefined : Locale.Mask.Name}
+        className={styles["sidebar-bar-button"]}
+        onClick={() => {
+          if (config.dontShowMaskSplashScreen !== true) {
+            navigate(Path.NewChat, { state: { fromHome: true } });
+          } else {
+            navigate(Path.Masks, { state: { fromHome: true } });
+          }
+        }}
+        shadow
+      />
+      <IconButton
+        icon={<PluginIcon />}
+        text={shouldNarrow ? undefined : Locale.Plugin.Name}
+        className={styles["sidebar-bar-button"]}
+        onClick={handleClick}
+        shadow
+      />
+    </div>
+  );
+};
   const onDragStart = (e: MouseEvent) => {
     // Remembers the initial width each time the mouse is pressed
     startX.current = e.clientX;
@@ -142,6 +168,7 @@ function useDragSideBar() {
 }
 
 export function SideBar(props: { className?: string }) {
+
   const chatStore = useChatStore();
 
   // drag side bar
@@ -261,4 +288,4 @@ export function SideBar(props: { className?: string }) {
     </div>
   );
 }
-export default YourComponent;
+export default SideBar;
