@@ -72,9 +72,11 @@ function useDragSideBar() {
       }
     });
   };
-  const accessStore = useAccessStore();
+  
   const YourComponent = () => {
     const [isFirstUrl, setIsFirstUrl] = useState(true);
+    const accessStore = useAccessStore();
+    const navigate = useNavigate();
 
   const handleClick = () => {
     if (isFirstUrl) {
