@@ -135,7 +135,7 @@ export function SideBar(props: { className?: string }) {
   );
 
   useHotKey();
-  
+
   const [isFirstUrl, setIsFirstUrl] = useState(true);
   
   const handleClick = () => {
@@ -148,7 +148,7 @@ export function SideBar(props: { className?: string }) {
       showToast(Locale.WIP);
     } else {
       accessStore.update((access) => {
-        access.openaiUrl = 'https://free.oneai.buzz/';
+        access.openaiUrl = 'https://ai.zeroai.buzz/';
         access.useCustomConfig = true;
       });
       showToast(Locale.VIP);
