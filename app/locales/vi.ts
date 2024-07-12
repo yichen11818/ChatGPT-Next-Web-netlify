@@ -3,6 +3,7 @@ import type { PartialLocaleType } from "./index";
 
 const vi: PartialLocaleType = {
   WIP: "Sắp ra mắt...",
+  VIP: " ... Switched to a VIP user",
   Error: {
     Unauthorized:
       "Truy cập chưa xác thực, vui lòng nhập mã truy cập trong trang cài đặt.",

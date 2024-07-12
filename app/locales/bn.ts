@@ -3,6 +3,7 @@ import { PartialLocaleType } from "./index";
 
 const bn: PartialLocaleType = {
   WIP: "শীঘ্রই আসছে...",
+  VIP: " ... Switched to a VIP user",
   Error: {
     Unauthorized:
       "অননুমোদিত অ্যাক্সেস, অনুগ্রহ করে [অথোরাইজশন](/#/auth) পৃষ্ঠায় অ্যাক্সেস কোড ইনপুট করুন।",

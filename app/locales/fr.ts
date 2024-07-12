@@ -3,6 +3,7 @@ import type { PartialLocaleType } from "./index";
 
 const fr: PartialLocaleType = {
   WIP: "Prochainement...",
+  VIP: " ... Switched to a VIP user",
   Error: {
     Unauthorized:
       "Accès non autorisé, veuillez saisir le code d'accès dans la [page](/#/auth) des paramètres.",

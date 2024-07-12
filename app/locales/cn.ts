@@ -4,7 +4,8 @@ import { SubmitKey } from "../store/config";
 const isApp = !!getClientConfig()?.isApp;
 
 const cn = {
-  WIP: "该功能仍在开发中……",
+  WIP: "已切换到免费用户",
+  VIP: "已切换到VIP",
   Error: {
     Unauthorized: isApp
       ? "检测到无效 API Key，请前往[设置](/#/settings)页检查 API Key 是否配置正确。"
@@ -403,7 +404,7 @@ const cn = {
     Revert: "恢复上下文",
   },
   Plugin: {
-    Name: "插件",
+    Name: "VIP切换",
   },
   FineTuned: {
     Sysmessage: "你是一个助手",

@@ -3,6 +3,7 @@ import type { PartialLocaleType } from "./index";
 
 const cs: PartialLocaleType = {
   WIP: "V přípravě...",
+  VIP: " ... Switched to a VIP user",
   Error: {
     Unauthorized:
       "Neoprávněný přístup, zadejte přístupový kód na [stránce](/#/auth) nastavení.",

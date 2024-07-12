@@ -3,6 +3,7 @@ import type { PartialLocaleType } from "./index";
 
 const de: PartialLocaleType = {
   WIP: "In Bearbeitung...",
+  VIP: " ... Switched to a VIP user",
   Error: {
     Unauthorized:
       "Unbefugter Zugriff, bitte geben Sie den Zugangscode auf der [Einstellungsseite](/#/auth) ein.",

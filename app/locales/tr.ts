@@ -3,6 +3,7 @@ import type { PartialLocaleType } from "./index";
 
 const tr: PartialLocaleType = {
   WIP: "Çalışma devam ediyor...",
+  VIP: " ... Switched to a VIP user",
   Error: {
     Unauthorized:
       "Yetkisiz erişim, lütfen erişim kodunu ayarlar [sayfasından](/#/auth) giriniz.",

@@ -3,6 +3,7 @@ import type { PartialLocaleType } from "./index";
 
 const ru: PartialLocaleType = {
   WIP: "Скоро...",
+  VIP: " ... Switched to a VIP user",
   Error: {
     Unauthorized:
       "Несанкционированный доступ. Пожалуйста, введите код доступа на [странице](/#/auth) настроек.",

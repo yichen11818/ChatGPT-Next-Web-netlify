@@ -10,7 +10,7 @@ import AddIcon from "../icons/add.svg";
 import CloseIcon from "../icons/close.svg";
 import DeleteIcon from "../icons/delete.svg";
 import MaskIcon from "../icons/mask.svg";
-import PluginIcon from "../icons/plugin.svg";
+import PluginIcon from "../icons/vip.png";
 import DragIcon from "../icons/drag.svg";
 
 import Locale from "../locales";
@@ -70,6 +70,19 @@ function useDragSideBar() {
         config.sidebarWidth = NARROW_SIDEBAR_WIDTH;
       }
     });
+  };
+  const YourComponent = () => {
+    const [isFirstUrl, setIsFirstUrl] = useState(true);
+
+  const handleClick = () => {
+    if (isFirstUrl) {
+      config.proxyUrl = 'https://free.oneai.buzz/';
+      showToast(Locale.WIP);
+    } else {
+      config.proxyUrl = 'https://ai.zeroai.buzz/';
+      showToast(Locale.VIP);
+    }
+    setIsFirstUrl(!isFirstUrl);
   };
 
   const onDragStart = (e: MouseEvent) => {
@@ -183,7 +196,7 @@ export function SideBar(props: { className?: string }) {
           icon={<PluginIcon />}
           text={shouldNarrow ? undefined : Locale.Plugin.Name}
           className={styles["sidebar-bar-button"]}
-          onClick={() => showToast(Locale.WIP)}
+          onClick={handleClick}
           shadow
         />
       </div>
@@ -248,3 +261,4 @@ export function SideBar(props: { className?: string }) {
     </div>
   );
 }
+export default YourComponent;

@@ -3,6 +3,7 @@ import type { PartialLocaleType } from "./index";
 
 const ar: PartialLocaleType = {
   WIP: "قريبًا...",
+  VIP: " ... Switched to a VIP user",
   Error: {
     Unauthorized:
       "غير مصرح بالوصول، يرجى إدخال رمز الوصول [auth](/#/auth) في صفحة المصادقة.",

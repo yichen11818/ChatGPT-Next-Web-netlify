@@ -4,6 +4,7 @@ import type { PartialLocaleType } from "./index";
 
 const ko: PartialLocaleType = {
   WIP: "곧 출시 예정...",
+  VIP: " ... Switched to a VIP user",
   Error: {
     Unauthorized:
       "권한이 없습니다. 설정 페이지에서 액세스 코드를 [입력하세요](/#/auth).",

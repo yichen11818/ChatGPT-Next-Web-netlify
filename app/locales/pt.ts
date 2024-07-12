@@ -6,6 +6,7 @@ const isApp = !!getClientConfig()?.isApp;
 
 const pt: PartialLocaleType = {
   WIP: "Em breve...",
+  VIP: " ... Switched to a VIP user",
   Error: {
     Unauthorized: isApp
       ? "Chave API inválida, por favor verifique em [Configurações](/#/settings)."

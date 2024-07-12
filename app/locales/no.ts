@@ -3,6 +3,7 @@ import type { PartialLocaleType } from "./index";
 
 const no: PartialLocaleType = {
   WIP: "Arbeid pågår ...",
+  VIP: " ... Switched to a VIP user",
   Error: {
     Unauthorized:
       "Du har ikke tilgang. [Vennlig oppgi tildelt adgangskode](/#/auth).",
