@@ -87,7 +87,7 @@ function useDragSideBar() {
       showToast(Locale.VIP);
     }
     setIsFirstUrl(!isFirstUrl);
-    console.log('Current OPENAI_BASE_URL:', access.openaiUrl);
+    console.log('Current OPENAI_BASE_URL:', accessStore.openaiUrl);
   };
 
   return (
