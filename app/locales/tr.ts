@@ -182,7 +182,9 @@ const tr: PartialLocaleType = {
     Add: "Yeni Ekle",
   },
   Plugin: {
-    Name: "Plugin",
+    Name: "VIP切换",
+    Name2:"VIP模式",
+    Name3:"免费模式"
   },
   FineTuned: {
     Sysmessage: "Sen bir asistansın",

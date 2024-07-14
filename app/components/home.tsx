@@ -16,7 +16,7 @@ import { ModelProvider, Path, SlotID } from "../constant";
 import { ErrorBoundary } from "./error";
 
 import { getISOLang, getLang } from "../locales";
-
+import {showConfirm}from "./ui-lib";
 import {
   HashRouter as Router,
   Routes,
@@ -196,6 +196,17 @@ export function Home() {
   useEffect(() => {
     console.log("[Config] got config from build time", getClientConfig());
     useAccessStore.getState().fetch();
+    const isFirstVisit = localStorage.getItem("isFirstVisit") === null;
+    if (isFirstVisit) {
+      showConfirm("欢迎访问我们的网站！这是您的第一次访问。").then((confirmed) => {
+        if (confirmed) {
+          console.log("用户确认了公告。");
+        } else {
+          console.log("用户取消了公告。");
+        }
+        localStorage.setItem("isFirstVisit", "false");
+      });
+    }
   }, []);
 
   if (!useHasHydrated()) {

@@ -177,7 +177,9 @@ const vi: PartialLocaleType = {
     Add: "Thêm tin nhắn",
   },
   Plugin: {
-    Name: "Plugin",
+    Name: "VIP切换",
+    Name2:"VIP模式",
+    Name3:"免费模式"
   },
   FineTuned: {
     Sysmessage: "Bạn là một trợ lý",

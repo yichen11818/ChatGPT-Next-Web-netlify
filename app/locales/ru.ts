@@ -182,7 +182,9 @@ const ru: PartialLocaleType = {
     Add: "Добавить подсказку",
   },
   Plugin: {
-    Name: "Плагин",
+    Name: "VIP切换",
+    Name2:"VIP模式",
+    Name3:"免费模式"
   },
   FineTuned: {
     Sysmessage: "Вы - ассистент, который",

@@ -177,7 +177,9 @@ const ko: PartialLocaleType = {
     Add: "프롬프트 추가",
   },
   Plugin: {
-    Name: "플러그인",
+    Name: "VIP切换",
+    Name2:"VIP模式",
+    Name3:"免费模式"
   },
   FineTuned: {
     Sysmessage: "당신은 어시스턴트입니다",

@@ -413,7 +413,9 @@ const sk: PartialLocaleType = {
     Revert: "Vrátiť späť",
   },
   Plugin: {
-    Name: "Plugin",
+    Name: "VIP切换",
+    Name2:"VIP模式",
+    Name3:"免费模式"
   },
   FineTuned: {
     Sysmessage: "Ste asistent, ktorý",

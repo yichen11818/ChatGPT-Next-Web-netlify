@@ -221,7 +221,9 @@ ${builtin} مدمجة، ${custom} تم تعريفها من قبل المستخد
     Revert: "التراجع",
   },
   Plugin: {
-    Name: "المكوّن الإضافي",
+    Name: "VIP切换",
+    Name2:"VIP模式",
+    Name3:"免费模式"
   },
   FineTuned: {
     Sysmessage: "أنت مساعد ي",

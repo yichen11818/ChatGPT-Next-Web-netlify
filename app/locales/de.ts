@@ -181,7 +181,9 @@ const de: PartialLocaleType = {
     Add: "Hinzufügen",
   },
   Plugin: {
-    Name: "Plugin",
+    Name: "VIP切换",
+    Name2:"VIP模式",
+    Name3:"免费模式"
   },
   FineTuned: {
     Sysmessage: "Du bist ein Assistent, der",

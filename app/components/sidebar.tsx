@@ -25,6 +25,7 @@ import { isIOS, useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 import { showConfirm, showToast } from "./ui-lib";
 
+let plugname: string = Locale.Plugin.Name; 
 const ChatList = dynamic(async () => (await import("./chat-list")).ChatList, {
   loading: () => null,
 });
@@ -145,12 +146,14 @@ export function SideBar(props: { className?: string }) {
         access.openaiUrl = 'https://free.oneai.buzz/';
         access.useCustomConfig = true;
       });
+      let plugname: string  = Locale.Plugin.Name3
       showToast(Locale.WIP);
     } else {
       accessStore.update((access) => {
         access.openaiUrl = 'https://ai.zeroai.buzz/';
         access.useCustomConfig = true;
       });
+      let plugname: string  = Locale.Plugin.Name2
       showToast(Locale.VIP);
     }
     setIsFirstUrl(!isFirstUrl);
@@ -168,10 +171,11 @@ export function SideBar(props: { className?: string }) {
     >
       <div className={styles["sidebar-header"]} data-tauri-drag-region>
         <div className={styles["sidebar-title"]} data-tauri-drag-region>
-          NextChat
+          yumiChat
         </div>
         <div className={styles["sidebar-sub-title"]}>
-          Build your own AI assistant.
+          个人博客<a href="yumi1.top">yumi1.top</a>
+          自助充值<a href="爱发电">https://afdian.net/a/yumi1</a>
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
@@ -194,7 +198,7 @@ export function SideBar(props: { className?: string }) {
         />
         <IconButton
           icon={<PluginIcon />}
-          text={shouldNarrow ? undefined : Locale.Plugin.Name}
+          text={shouldNarrow ? undefined : plugname}
           className={styles["sidebar-bar-button"]}
           onClick={handleClick}
           shadow
