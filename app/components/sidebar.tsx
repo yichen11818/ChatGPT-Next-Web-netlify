@@ -174,8 +174,8 @@ export function SideBar(props: { className?: string }) {
           yumiChat
         </div>
         <div className={styles["sidebar-sub-title"]}>
-          个人博客<a href="yumi1.top">yumi1.top</a>
-          自助充值<a href="爱发电">https://afdian.net/a/yumi1</a>
+          个人博客<a href="https://yumi1.top">yumi1.top</a>
+          自助充值<a href="https://afdian.net/a/yumi1">爱发电</a>
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
