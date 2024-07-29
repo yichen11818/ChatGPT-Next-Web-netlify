@@ -468,7 +468,6 @@ const cn = {
   },
 
   UI: {
-    
     Confirm: "确认",
     Cancel: "取消",
     Close: "关闭",
