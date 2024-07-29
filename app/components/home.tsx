@@ -199,7 +199,7 @@ export function Home() {
 
   const noRemind = localStorage.getItem("noRemind") === "true";
   if (!noRemind) {
-    showNotice().then((confirmed) => {
+    showNotice("111").then((confirmed) => {
       if (confirmed) {
         console.log("用户确认了公告。");
       } else {

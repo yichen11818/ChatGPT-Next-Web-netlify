@@ -389,7 +389,7 @@ export function showNotice(content: any) {
         ]}
         onClose={closeModal}
       >
-        {个人博客<a href="https://yumi1.top" target="_blank" >yumi1.top</a>自助充值<a href="https://afdian.com/a/yumi1" target="_blank" >爱发电</a>}
+        {content}
       </Modal>,
     );
   });
