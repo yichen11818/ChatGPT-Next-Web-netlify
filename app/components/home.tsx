@@ -199,7 +199,7 @@ export function Home() {
 
   const noRemind = localStorage.getItem("noRemind") === "true";
   if (!noRemind) {
-    showNotice("111").then((confirmed) => {
+    showNotice("免费用户可免费使用gpt3.5与gpt4o此网站无需填写访问码 vip更稳定4.0更好用右上角可找到自助购买链接").then((confirmed) => {
       if (confirmed) {
         console.log("用户确认了公告。");
       } else {
