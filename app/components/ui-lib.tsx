@@ -343,6 +343,58 @@ export function showConfirm(content: any) {
   });
 }
 
+export function showNotice(content: any) {
+  const div = document.createElement("div");
+  div.className = "modal-mask";
+  document.body.appendChild(div);
+
+  const root = createRoot(div);
+  const closeModal = () => {
+    root.unmount();
+    div.remove();
+  };
+
+  return new Promise<boolean>((resolve) => {
+    root.render(
+      <Modal
+        title={"公告"}
+        actions={[
+          <IconButton
+            key="cancel"
+            text={"不再提示"}
+            onClick={() => {
+              localStorage.setItem("noRemind", "true");
+              resolve(false);
+              closeModal();
+            }}
+            icon={<CancelIcon />}
+            tabIndex={0}
+            bordered
+            shadow
+          ></IconButton>,
+          <IconButton
+            key="confirm"
+            text={Locale.UI.Confirm}
+            type="primary"
+            onClick={() => {
+              resolve(true);
+              closeModal();
+            }}
+            icon={<ConfirmIcon />}
+            tabIndex={0}
+            autoFocus
+            bordered
+            shadow
+          ></IconButton>,
+        ]}
+        onClose={closeModal}
+      >
+        {content}
+      </Modal>,
+    );
+  });
+}
+
 function PromptInput(props: {
   value: string;
   onChange: (value: string) => void;
