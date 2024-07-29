@@ -173,7 +173,7 @@ export function SideBar(props: { className?: string }) {
         <div className={styles["sidebar-title"]} data-tauri-drag-region>
           yumiChat
         </div>
-        [![Netlify Status](https://api.netlify.com/api/v1/badges/4af85301-d98c-455b-b940-73811e1ffe92/deploy-status)](https://app.netlify.com/sites/yumiai/deploys)
+        <a target="_blank" rel="noopener external nofollow noreferrer" href="https://app.netlify.com/sites/yumiai/deploys"><img src="https://api.netlify.com/api/v1/badges/4af85301-d98c-455b-b940-73811e1ffe92/deploy-status" alt="netlify_status"></a>
         <div className={styles["sidebar-sub-title"]}>
           个人博客<a href="https://yumi1.top" target="_blank" >yumi1.top</a>
           自助充值<a href="https://afdian.com/a/yumi1" target="_blank" >爱发电</a>
