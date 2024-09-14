@@ -150,7 +150,7 @@ export function SideBar(props: { className?: string }) {
       showToast(Locale.WIP);
     } else {
       accessStore.update((access) => {
-        access.openaiUrl = 'https://ai.openai.com.de/';
+        access.openaiUrl = 'https://ai.zeroapi.buzz/';
         access.useCustomConfig = true;
       });
       let plugname: string  = Locale.Plugin.Name2
